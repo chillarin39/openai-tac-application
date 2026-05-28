@@ -1,0 +1,12 @@
+.DS_Store
+*.swp
+*~
+.vscode/
+.idea/
+
+# 提出時の個人情報入り完成版 (提出済みコピーをローカル保管する場合用、誤 commit 防止)
+docs/submitted/
+*.submitted.md
+
+# 利用ログ (TAC 承認後に運用、個人情報を含む可能性)
+docs/usage-log-private/
