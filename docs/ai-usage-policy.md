@@ -42,7 +42,7 @@
   - 705 = lab-router (任意、ARP Spoof 等 L2 演習用)
 - **公開済み読者配布教材**: Vagrantfile / docker-compose (DVWA / Juice Shop / Kali / Metasploitable2)
 
-> **現状 (2026-05-29)**: vmbr2 ネットワークセグメントは Terraform で apply 済みだが、VMID 701-705 の Terraform apply は未完了 (Phase 0 進行中)。本ポリシーが効力を持つのは Phase 0 完了後、TAC 申請提出時点。
+> **現状 (2026-05-30)**: vmbr2 / VMID 701 (kali-edu) は Terraform で apply 済み + 物理隔離立証 ([Phase 0 evidence](./evidence/)) 完了。VMID 702 (vuln-web-lab) は boot panic で再 provisioning 待ち、703-705 は後続フェーズ。TAC アクセスは 2026-05-30 に KYC 通過で有効化済 (個人ルートでは詳細申請フォーム非経由)。本ポリシーは TAC 有効化と同時点から効力を持つ。
 
 ### 4.2 明示的に対象外 (利用禁止)
 
@@ -88,7 +88,7 @@
 
 - ChatGPT 会話履歴 (OpenAI 側保存、必要に応じてエクスポート保管)
 - 教材ラボ側の認証ログ (`/var/log/auth.log`)、Suricata `eve.json`、bash history は VM スナップショット時点で保全
-- 重要な利用記録は `docs/usage-log.md` (TAC 承認後に新設) に月次サマリで記録
+- 重要な利用記録は [`docs/usage-log.md`](./usage-log.md) に月次サマリで記録 (2026-05-30 新設、TAC 有効化と同日に運用開始)
 
 ### 8.2 監査可能性
 
