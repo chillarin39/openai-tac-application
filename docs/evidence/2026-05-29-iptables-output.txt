@@ -1,0 +1,8 @@
+Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+ pkts bytes target     prot opt in     out     source               destination         
+  257 23360 ACCEPT     all  --  *      lo      0.0.0.0/0            0.0.0.0/0           
+  325 35908 ACCEPT     all  --  *      *       0.0.0.0/0            0.0.0.0/0            ctstate RELATED,ESTABLISHED
+    0     0 DROP       all  --  *      *       0.0.0.0/0            172.16.0.0/12        ctstate NEW
+    0     0 DROP       all  --  *      *       0.0.0.0/0            192.168.0.0/16       ctstate NEW
+    0     0 DROP       all  --  *      *       0.0.0.0/0            10.1.0.0/16          ctstate NEW
+    0     0 ACCEPT     all  --  *      *       0.0.0.0/0            10.20.0.0/16        

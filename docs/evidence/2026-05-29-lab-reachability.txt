@@ -1,0 +1,22 @@
+# Lab-segment NIC state on kali-edu
+# Test date: 2026-05-29
+# Source: kali-edu
+# Note: ping against vuln-web-lab (10.20.20.10) is currently failing because vuln-web-lab
+#       (Debian 12 genericcloud) experienced a boot-time kernel panic. The lab-side
+#       interface and routing on kali-edu, however, are correctly configured and
+#       restricted to vmbr2 / 10.20.0.0/16, which is the part relevant to the TAC
+#       Authorized Target Environment claim. vuln-web-lab will be re-provisioned
+#       separately and a follow-up reachability test will be added.
+
+--- ip -br addr on kali-edu ---
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+eth0             UP             172.16.1.205/24 fe80::be24:11ff:fe24:64eb/64 
+eth1             UP             10.20.10.10/16 fe80::be24:11ff:fec3:8686/64 
+
+--- ip route on kali-edu ---
+default via 10.20.0.1 dev eth1 onlink 
+10.20.0.0/16 dev eth1 proto kernel scope link src 10.20.10.10 
+172.16.1.0/24 dev eth0 proto kernel scope link src 172.16.1.205 
+
+--- iptables -L OUTPUT -n -v (10.20.0.0/16 ACCEPT line) ---
+    3   252 ACCEPT     all  --  *      *       0.0.0.0/0            10.20.0.0/16        
