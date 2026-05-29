@@ -1,0 +1,17 @@
+# External / Internet unreachability test from kali-edu
+# Test date: 2026-05-29
+# Source: kali-edu (default route via 10.20.0.1 = unreachable lab-router 705 placeholder)
+# Expectation: External targets (8.8.8.8) must be unreachable until lab-router 705 is deployed.
+#              This demonstrates the lab is fully isolated at boot, without ad-hoc Internet egress.
+
+--- ping 8.8.8.8 (Google DNS, external) ---
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+From 10.20.10.10 icmp_seq=1 Destination Host Unreachable
+From 10.20.10.10 icmp_seq=2 Destination Host Unreachable
+
+--- 8.8.8.8 ping statistics ---
+3 packets transmitted, 0 received, +2 errors, 100% packet loss, time 2009ms
+pipe 2
+
+--- curl --max-time 5 https://example.com ---
+bash: line 1: curl: command not found

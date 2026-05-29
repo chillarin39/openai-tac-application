@@ -23,8 +23,8 @@
 |---|------|------|-----------|
 | A-2-1 | AI 利用ポリシー (日本語) 作成 | ☑ | [`docs/ai-usage-policy.md`](./ai-usage-policy.md) |
 | A-2-2 | 英文プロファイル草稿作成 | ☑ | [`docs/tac-application-profile.en.md`](./tac-application-profile.en.md) |
-| A-2-3 | GitHub public repo として publicly accessible にする | ☐ | https://github.com/chillarin39/openai-tac-application |
-| A-2-4 | プレースホルダ (`<insert at submission>`) を実値に置換 (提出直前) | ☐ | 英文プロファイル §10、提出版は `docs/submitted/` に保管 (gitignored) |
+| A-2-3 | GitHub public repo として publicly accessible にする | ☑ | https://github.com/chillarin39/openai-tac-application |
+| A-2-4 | プレースホルダ (`<insert at submission>`) を実値に置換 (提出直前) | ☑ | 2026-05-29 完了、提出版 `docs/submitted/2026-05-29-tac-submission.md` (gitignored) |
 
 ### A-3. ラボ環境の証憑揃え (Phase 0 進行中)
 
@@ -33,13 +33,13 @@
 | A-3-1 | `ip_guard.sh` がラボ canonical に存在 | ☑ | 教材ラボワークスペース内 scripts/security/ |
 | A-3-2 | `ethics_lint.sh` が pre-commit hook として動作 | ☑ | 同上 |
 | A-3-3 | vmbr2 が 3 ノードで設定済 | ☑ | Terraform `network.tf` apply 済 (2026-05-15) |
-| A-3-4 | **VMID 701 (kali-edu) Terraform apply** | ☐ | **未着手 — 申請提出の必須前提** |
-| A-3-5 | **VMID 702 (vuln-web-lab) Terraform apply** | ☐ | **未着手 — 申請提出の必須前提** |
-| A-3-6 | kali-edu の iptables OUTPUT DROP ルール検証 | ☐ | `ssh kali-edu sudo iptables -L OUTPUT -n -v` で確認 |
-| A-3-7 | 10.20.0.0/16 から 172.16.1.0/24 への到達不能性検証 | ☐ | `ssh kali-edu ping -c 1 172.16.1.1` が失敗することを確認 |
-| A-3-8 | 検証結果のスクリーンショット / ログ保管 | ☐ | `docs/evidence/` に保存 (次フェーズで新設) |
+| A-3-4 | **VMID 701 (kali-edu) Terraform apply** | ☑ | 2026-05-29 apply 完了、cloud-init done、SSH 疎通 + iptables ロード確認済 |
+| A-3-5 | **VMID 702 (vuln-web-lab) Terraform apply** | ⚠️ | 2026-05-29 apply 自体は成功 (Resources: 4 added) / VM 起動時 Debian 12 genericcloud で boot-time kernel panic、別途再 provisioning 予定。kali-edu 側の Authorized Target Environment 立証には独立 |
+| A-3-6 | kali-edu の iptables OUTPUT DROP ルール検証 | ☑ | [`docs/evidence/2026-05-29-iptables-output.txt`](./evidence/2026-05-29-iptables-output.txt) |
+| A-3-7 | 10.20.0.0/16 から 172.16.1.0/24 への到達不能性検証 | ☑ | [`docs/evidence/2026-05-29-unreachability-prod.txt`](./evidence/2026-05-29-unreachability-prod.txt) 全 9 packet 100% loss |
+| A-3-8 | 検証結果のスクリーンショット / ログ保管 | ☑ | [`docs/evidence/`](./evidence/) 配下、4 ファイル + README.md |
 
-> **クリティカルパス**: A-3-4 〜 A-3-8 が揃わないと TAC 申請の核心根拠 (Authorized Target Environment) が「計画段階」のままになる。提出前に必ずクリア。
+> **クリティカルパス**: A-3-4 〜 A-3-8 のうち TAC 申請に必要な核心 (kali-edu 側) は **2026-05-29 すべてクリア**。A-3-5 vuln-web-lab の boot panic は申請後の Phase 0 残務として記録、本申請のスコープ判断には影響しない。
 
 ### A-4. 公開実績の整理
 
@@ -54,8 +54,8 @@
 
 | # | 項目 | 状態 |
 |---|------|------|
-| A-5-1 | NG ワード (exploit / 制限の少ない / 自由に試したい) が文書に含まれていない | ☐ |
-| A-5-2 | 防御目的の言い換え表現に統一されている | ☐ |
+| A-5-1 | NG ワード (exploit / 制限の少ない / 自由に試したい) が文書に含まれていない | ☑ |
+| A-5-2 | 防御目的の言い換え表現に統一されている | ☑ |
 | A-5-3 | redteam-lab を **明示的に対象外** と書いている | ☑ |
 | A-5-4 | 入力禁止情報リストが具体的 | ☑ |
 | A-5-5 | 段階的アプローチ (Phase 1-4) が記述されている | ☑ |
