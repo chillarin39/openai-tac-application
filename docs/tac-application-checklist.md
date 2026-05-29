@@ -1,9 +1,11 @@
-# OpenAI TAC / GPT-5.5 Cyber 申請前チェックリスト
+# OpenAI TAC / GPT-5.5 Cyber チェックリスト
 
-**対象**: 個人申請ルート (chatgpt.com/cyber 経由で TAC 取得 → 段階的に Cyber 上位申請)
-**最終更新**: 2026-05-29 (Phase B 提出済)
+**対象**: 個人ルート (chatgpt.com/cyber 経由で TAC 有効化 → 段階的に GPT-5.5 Cyber 上位申請)
+**最終更新**: 2026-05-30 (Phase B = KYC 通過で TAC 有効化済)
 **Canonical URL**: https://github.com/chillarin39/openai-tac-application/blob/main/docs/tac-application-checklist.md
 **参考一次資料**: https://area11.org/Doc/technology/ai/openai-tac-cyber-access/
+
+> **重要 (2026-05-30 発見)**: 個人向け `chatgpt.com/cyber` には詳細な申請フォーム (英文プロファイル / URL リスト / 用途記述) が存在せず、**本人確認 (KYC) を完了するだけで TAC アクセスが即時有効化** される仕組みでした。本チェックリストの Phase A で用意した素材は、当初は申請素材として準備したものの、実際の有効化フローでは使用されていません。現在は「自主公開した個人 TAC 運用ガイドライン」+「GPT-5.5 Cyber 上位申請時の track record」として位置づけています。
 
 ---
 
@@ -24,7 +26,7 @@
 | A-2-1 | AI 利用ポリシー (日本語) 作成 | ☑ | [`docs/ai-usage-policy.md`](./ai-usage-policy.md) |
 | A-2-2 | 英文プロファイル草稿作成 | ☑ | [`docs/tac-application-profile.en.md`](./tac-application-profile.en.md) |
 | A-2-3 | GitHub public repo として publicly accessible にする | ☑ | https://github.com/chillarin39/openai-tac-application |
-| A-2-4 | プレースホルダ (`<insert at submission>`) を実値に置換 (提出直前) | ☑ | 2026-05-29 完了、提出版 `docs/submitted/2026-05-29-tac-submission.md` (gitignored) |
+| A-2-4 | プレースホルダ (`<insert at submission>`) を実値に置換 (提出直前) | ☑ | 2026-05-29 完了、提出版 `docs/submitted/2026-05-29-tac-submission.md` (gitignored) — 実際の有効化フローでは未使用、アーカイブとして保管 |
 
 ### A-3. ラボ環境の証憑揃え (Phase 0 進行中)
 
@@ -63,54 +65,58 @@
 
 ---
 
-## Phase B: 申請手続き
+## Phase B: アクセス取得手続き
 
-### B-1. 申請ルートの選択
+### B-1. 取得ルートの選択
 
 | 選択肢 | 用途 | 採用 |
 |--------|------|------|
-| `chatgpt.com/cyber` (個人 TAC) | 個人の防御研究者向け | ☑ **第一段階** |
+| `chatgpt.com/cyber` (個人 TAC) | 個人の防御研究者向け、**KYC 通過のみで即時有効化** | ☑ **第一段階** |
 | `openai.com/form/enterprise-trusted-access-for-cyber/` (組織) | 法人登記必要 | ✗ 不採用 |
-| GPT-5.5 Cyber 直接申請 | 上位、TAC 実績必要 | ☐ 第二段階 (TAC 取得後) |
+| GPT-5.5 Cyber 直接申請 | 上位、TAC 実績必要 | ☐ 第二段階 (TAC 運用実績後) |
 
-### B-2. 申請提出フロー
+### B-2. 取得フロー (2026-05-29 実行 → 2026-05-30 有効化確認)
 
-1. ☑ `chatgpt.com/cyber` にアクセス (2026-05-29)
+> **想定外発見** (2026-05-30): 個人向け chatgpt.com/cyber には **詳細な申請フォーム (英文プロファイル / URL リスト / 用途記述) が存在しない**。本人確認 (KYC) を完了するだけで TAC アクセスが即時有効化される仕組みだった。我々が用意した英文プロファイル / AI 利用ポリシー / Phase 0 evidence は **「自主公開した個人 TAC 運用ガイドライン」** として位置づけを変更 (透明性 + 自己拘束 + GPT-5.5 Cyber 上位申請時の track record として活用)。
+
+1. ☑ `chatgpt.com/cyber` にアクセス
 2. ☑ ChatGPT アカウントでログイン (Passkey 認証)
-3. ☑ 申請フォームに以下を貼付:
-   - 英文プロファイル §1〜§10 の本文
-   - AI 利用ポリシー URL (https://github.com/chillarin39/openai-tac-application/blob/main/docs/ai-usage-policy.md)
-   - Phase 0 evidence URL (https://github.com/chillarin39/openai-tac-application/tree/main/docs/evidence)
-   - GitHub URL (https://github.com/chillarin39)
-   - 公開ブログ URL (https://chillablog.chillarin39.com/)
-   - 個人 Hub URL (https://chillarin39.com/)
-4. ☑ 本人確認書類アップロード (マイナンバーカード、表面のみ、12 桁個人番号はマスク)
-5. ☑ 禁止用途の不使用宣言にチェック
-6. ☑ 提出版を `docs/submitted/2026-05-29-tac-submission.md` に保存 (gitignored)
-7. ☑ 提出 (2026-05-29)
-8. ☐ 提出日と参照番号を `docs/usage-log.md` に記録 (Phase C で新設) — 参照番号はユーザーから共有後
+3. ☑ 本人確認書類アップロード (マイナンバーカード、表面、12 桁個人番号はマスク済)
+4. ☑ 同意事項にチェック (利用範囲は防御研究 / 自己所有または明示的認可システムに限る、等)
+5. ☑ **KYC 通過確認**: 「確認されました / 本人確認を完了し、信頼されたアクセスが有効になりました。」表示 + 「Codex に移動する」緑ボタン
 
-### B-3. 想定される追加質問への準備回答
+### B-3. 自主公開素材 (申請フォームには使われなかったが、自主拘束 + track record として価値あり)
+
+| 素材 | 用途 |
+|------|-----|
+| [`docs/ai-usage-policy.md`](./ai-usage-policy.md) | 自主公開した個人 AI 利用ポリシー (透明性 + 自己監査) |
+| [`docs/tac-application-profile.en.md`](./tac-application-profile.en.md) | 当初は申請素材として用意、現在は「個人 TAC 運用方針の自主開示」として位置づけ。GPT-5.5 Cyber 上位申請時に再利用 |
+| [`docs/evidence/`](./evidence/) | Phase 0 ラボの物理隔離立証ログ。指南書本編 + 上位申請時の参照素材として活用 |
+| [`docs/submitted/2026-05-29-tac-submission.md`](gitignored) | 当初は提出版として用意、提出フォームが無かったため未使用。アーカイブとして保管 |
+
+### B-4. 想定される後続 (Codex 側で運用ポリシー要求が出る可能性)
+
+Codex 側に移動した時に追加の同意 / ポリシー記述要求が出る可能性。出た時の準備:
 
 | 想定質問 | 用意した回答素材 |
 |---------|----------------|
-| 「教材ラボの物理隔離証明は？」 | vmbr2 が slaveless internal bridge である旨 + Terraform `network.tf` の構成 |
-| 「公開ブログで攻撃手法を解説するリスクは？」 | 文章レビュー (anti-ai-slop-check / study-prose-check) を経由、抽象化ルール (RFC 5737) |
+| 「教材ラボの物理隔離証明は？」 | vmbr2 が slaveless internal bridge である旨 + Terraform `network.tf` の構成 + Phase 0 evidence directory |
+| 「公開ブログで攻撃手法を解説するリスクは？」 | 文章レビュー (anti-ai-slop-check / study-prose-check) 経由、抽象化ルール (RFC 5737) |
 | 「本番環境と教材ラボの分離は技術的にどう保証？」 | 4 層 (vmbr2 物理隔離 / iptables OUTPUT / ip_guard.sh / ethics_lint.sh commit hook) |
 | 「日本語以外のドキュメントは？」 | 英文プロファイル URL を提示 |
 
 ---
 
-## Phase C: 承認後の運用立ち上げ
+## Phase C: 利用開始後の運用立ち上げ (KYC 通過 = 即時有効化のため Phase B 直後に着手)
 
-### C-1. 即時実施 (TAC 承認 1 週間以内)
+### C-1. 即時実施 (TAC 有効化 1 週間以内)
 
 | # | 項目 | 状態 |
 |---|------|------|
 | C-1-1 | `docs/usage-log.md` を新設、月次サマリ運用開始 | ☐ |
 | C-1-2 | 利用フェーズ (Phase 1) を README に記載 | ☐ |
 | C-1-3 | system-dashboard の systems.yaml に "openai-tac-application" 項目追加 | ☐ |
-| C-1-4 | TAC 取得を ナレッジ DB に記録 | ☐ |
+| C-1-4 | TAC 有効化を ナレッジ DB に記録 | ☐ |
 
 ### C-2. 1〜3ヶ月運用 (Phase 1-2)
 
@@ -135,8 +141,8 @@
 
 | # | 項目 | 状態 |
 |---|------|------|
-| D-1 | `blog_article_index.md` に「個人セキュリティ研究者の GPT-5.5 Cyber 申請記」登録 (S-79) | ☑ |
-| D-2 | 申請内容のうち公開可能な範囲 = この repo 自体が公開素材 | ☑ |
+| D-1 | `blog_article_index.md` に「個人セキュリティ研究者の TAC 取得記 + GPT-5.5 Cyber 上位申請判断」登録 (S-79) | ☑ |
+| D-2 | 取得プロセスのうち公開可能な範囲 = この repo 自体が公開素材 (KYC のみで有効化される実態 + 自主公開した運用ガイドラインの設計過程を含む) | ☑ |
 | D-3 | content-publishing-flow に基づく有料コンテンツ化判断 | ☐ TAC 運用 3 ヶ月後 |
 
 ---
