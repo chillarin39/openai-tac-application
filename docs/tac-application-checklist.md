@@ -1,7 +1,7 @@
 # OpenAI TAC / GPT-5.5 Cyber 申請前チェックリスト
 
 **対象**: 個人申請ルート (chatgpt.com/cyber 経由で TAC 取得 → 段階的に Cyber 上位申請)
-**最終更新**: 2026-05-29
+**最終更新**: 2026-05-29 (Phase B 提出済)
 **Canonical URL**: https://github.com/chillarin39/openai-tac-application/blob/main/docs/tac-application-checklist.md
 **参考一次資料**: https://area11.org/Doc/technology/ai/openai-tac-cyber-access/
 
@@ -75,19 +75,20 @@
 
 ### B-2. 申請提出フロー
 
-1. ☐ `chatgpt.com/cyber` にアクセス
-2. ☐ ChatGPT アカウントでログイン (Passkey 認証)
-3. ☐ 申請フォームに以下を貼付:
+1. ☑ `chatgpt.com/cyber` にアクセス (2026-05-29)
+2. ☑ ChatGPT アカウントでログイン (Passkey 認証)
+3. ☑ 申請フォームに以下を貼付:
    - 英文プロファイル §1〜§10 の本文
    - AI 利用ポリシー URL (https://github.com/chillarin39/openai-tac-application/blob/main/docs/ai-usage-policy.md)
+   - Phase 0 evidence URL (https://github.com/chillarin39/openai-tac-application/tree/main/docs/evidence)
    - GitHub URL (https://github.com/chillarin39)
    - 公開ブログ URL (https://chillablog.chillarin39.com/)
    - 個人 Hub URL (https://chillarin39.com/)
-4. ☐ 本人確認書類アップロード (パスポート or 運転免許証 or マイナンバーカード)
-5. ☐ 禁止用途の不使用宣言にチェック
-6. ☐ 提出版を `docs/submitted/YYYY-MM-DD-tac-submission.md` に保存 (gitignored)
-7. ☐ 提出
-8. ☐ 提出日と参照番号を `docs/usage-log.md` に記録 (Phase C で新設)
+4. ☑ 本人確認書類アップロード (マイナンバーカード、表面のみ、12 桁個人番号はマスク)
+5. ☑ 禁止用途の不使用宣言にチェック
+6. ☑ 提出版を `docs/submitted/2026-05-29-tac-submission.md` に保存 (gitignored)
+7. ☑ 提出 (2026-05-29)
+8. ☐ 提出日と参照番号を `docs/usage-log.md` に記録 (Phase C で新設) — 参照番号はユーザーから共有後
 
 ### B-3. 想定される追加質問への準備回答
 
